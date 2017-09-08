@@ -1,0 +1,16 @@
+{
+  "name": "4macs",
+  "version": "1.0.0",
+  "description": "3 Macbooks and Mac",
+  "main": "index.js",
+  "repository": "mac@ombord.trainhack.se:4macs.git",
+  "author": "4macs",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-env": "^2.4.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-sass": "^3.1.0"
+  }
+}
