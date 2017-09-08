@@ -1,3 +1,4 @@
+// Amazing 😦
 function draw() {
   var canvas = document.getElementById('canvas');
   if (canvas.getContext) {
