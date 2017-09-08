@@ -28,3 +28,10 @@ svg .purple {
 
 svg .blue {
   fill: #2F4ACC; }
+
+.pointer {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: #000;
+  position: absolute; }
