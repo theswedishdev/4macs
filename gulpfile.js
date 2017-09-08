@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const babel = require('gulp-babel');
+const clean = require('gulp-clean');
 
 gulp.task('scss', () => {
   return gulp.src('src/**/*.scss')
@@ -19,6 +20,11 @@ gulp.task('js', () => {
 gulp.task('libs', () => {
   return gulp.src('src/lib/**/*.js')
     .pipe(gulp.dest('dist/lib'));
+});
+
+gulp.task('clean', () => {
+  return gulp.src('dist', { read: false })
+    .pipe(clean({ force: true }));
 });
 
 gulp.task('watch', () => {
