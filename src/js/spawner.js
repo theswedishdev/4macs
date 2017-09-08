@@ -1,2 +1,4 @@
 const stops = document.querySelectorAll('rect');
-console.log(stops);
+for (let i = 0; i < stops.length; i++) {
+  const stop = stops[i];
+}

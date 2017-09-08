@@ -1,0 +1,30 @@
+body {
+  background: #4ce07e;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.main {
+  width: 954px;
+  height: 768px; }
+
+svg .rail {
+  fill: #FFFFFF; }
+
+svg .border {
+  fill: #4CE07E; }
+
+svg .stop {
+  fill: #353535; }
+
+svg .red {
+  fill: #D84444; }
+
+svg .yellow {
+  fill: #F2DA2F; }
+
+svg .purple {
+  fill: #BA41D8; }
+
+svg .blue {
+  fill: #2F4ACC; }

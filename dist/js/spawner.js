@@ -1,4 +1,6 @@
 'use strict';
 
 var stops = document.querySelectorAll('rect');
-console.log(stops);
+for (var i = 0; i < stops.length; i++) {
+  var stop = stops[i];
+}
