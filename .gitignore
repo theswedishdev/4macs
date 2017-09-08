@@ -148,5 +148,5 @@ $RECYCLE.BIN/
 
 # End of https://www.gitignore.io/api/vim,linux,macos,windows,visualstudiocode,node
 
-dist
+# dist
 yarn.lock

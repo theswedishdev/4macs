@@ -1,0 +1,9 @@
+body {
+  background: #4ce07e;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.main {
+  width: 954px;
+  height: 768px; }
