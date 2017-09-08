@@ -1,6 +1,3 @@
-// Temporary variable to store the pointer in focus.
-let focusPointer;
-
 const playerNodes = document.querySelectorAll('.player');
 for (let i = 0; i < playerNodes.length; i++) {
 
