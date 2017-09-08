@@ -12,6 +12,7 @@ for (let i = 0; i < playerNodes.length; i++) {
       pointer.destroy();
       window.removeEventListener('mousemove', mouseMove);
       window.removeEventListener('mouseup', stopTracking);
+      removePointer(focusPointer)
     });
 
     function mouseMove(e) {

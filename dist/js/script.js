@@ -1,8 +1,5 @@
 'use strict';
 
-// Temporary variable to store the pointer in focus.
-var focusPointer = void 0;
-
 var playerNodes = document.querySelectorAll('.player');
 for (var i = 0; i < playerNodes.length; i++) {
 
@@ -17,6 +14,7 @@ for (var i = 0; i < playerNodes.length; i++) {
       pointer.destroy();
       window.removeEventListener('mousemove', mouseMove);
       window.removeEventListener('mouseup', stopTracking);
+      removePointer(focusPointer);
     });
 
     function mouseMove(e) {
