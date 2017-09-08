@@ -7,4 +7,5 @@ var Player = function Player(color) {
 
   // Set the start node for the player.
   this.start = document.querySelector('.player.' + color);
+  this.color = color;
 };
