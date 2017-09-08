@@ -34,4 +34,6 @@ svg .blue {
   height: 20px;
   border-radius: 10px;
   background: #000;
-  position: absolute; }
+  position: absolute;
+  top: 0;
+  left: 0; }

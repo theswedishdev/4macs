@@ -11,6 +11,7 @@ for (let i = 0; i < playerNodes.length; i++) {
 
     window.addEventListener('mouseup', function stopTracking() {
       console.log('Stopped tracking!');
+      document.body.removeChild(focusPointer);
       window.removeEventListener('mousemove', movePlayer);
       window.removeEventListener('mouseup', stopTracking);
     });
@@ -19,25 +20,25 @@ for (let i = 0; i < playerNodes.length; i++) {
 }
 
 function movePlayer(e) {
+  focusPointer.style.display = 'none';
   const hoverElement = document.elementFromPoint(e.clientX, e.clientY);
   if (hoverElement.classList.contains('rail') || hoverElement.classList.contains('stop')) {
     movePointer(focusPointer, e.clientX, e.clientY);
     console.log( 'I am on a ' + hoverElement.classList.value );
   }
+  focusPointer.style.display = 'block';
 }
 
 function paintPointer(x, y) {
   const pointer = document.createElement('div');
   pointer.classList.add('pointer');
-  pointer.style.top = (y - 10) + 'px';
-  pointer.style.left = (x - 10) + 'px';
+  pointer.style.transform = 'translate3d(' + (x - 10) + 'px, ' + (y - 10) + 'px, 0px)';
   document.body.appendChild(pointer);
   focusPointer = pointer;
 }
 
 function movePointer(pointer, x, y) {
-  pointer.style.top = (y - 10) + 'px';
-  pointer.style.left = (x - 10) + 'px';
+  pointer.style.transform = 'translate3d(' + (x - 10) + 'px, ' + (y - 10) + 'px, 0px)';
 }
 
 // Example of how we can do hover over (touch over).
