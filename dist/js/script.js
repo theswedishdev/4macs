@@ -16,6 +16,7 @@ for (var i = 0; i < playerNodes.length; i++) {
       document.body.removeChild(focusPointer);
       window.removeEventListener('mousemove', movePlayer);
       window.removeEventListener('mouseup', stopTracking);
+      removePointer(focusPointer);
     });
   });
 }
@@ -42,6 +43,9 @@ function movePointer(pointer, x, y) {
   pointer.style.transform = 'translate3d(' + (x - 10) + 'px, ' + (y - 10) + 'px, 0px)';
 }
 
+function removePointer(pointer) {
+  pointer.parentNode.removeChild(pointer);
+}
 // Example of how we can do hover over (touch over).
 // window.addEventListener('mousemove', (e) => {
 //
