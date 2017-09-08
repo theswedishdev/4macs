@@ -6,46 +6,29 @@ for (let i = 0; i < playerNodes.length; i++) {
 
   playerNodes[i].addEventListener('mousedown', (e) => {
     console.log('Started tracking..');
-    paintPointer(e.clientX, e.clientY);
-    window.addEventListener('mousemove', movePlayer);
 
-    window.addEventListener('mouseup', function stopTracking() {
+    let pointer = new Pointer('lul', e.clientX, e.clientY);
+    window.addEventListener('mousemove', mouseMove);
+
+    window.addEventListener('mouseup', function stopTracking(e) {
       console.log('Stopped tracking!');
-      document.body.removeChild(focusPointer);
-      window.removeEventListener('mousemove', movePlayer);
+      pointer.destroy();
+      window.removeEventListener('mousemove', mouseMove);
       window.removeEventListener('mouseup', stopTracking);
     });
+
+    function mouseMove(e) {
+      movePlayer.call(pointer, e);
+    }
   });
 
 }
 
 function movePlayer(e) {
-  focusPointer.style.display = 'none';
+  this.hide();
   const hoverElement = document.elementFromPoint(e.clientX, e.clientY);
-  if (hoverElement.classList.contains('rail') || hoverElement.classList.contains('stop')) {
-    movePointer(focusPointer, e.clientX, e.clientY);
-    console.log( 'I am on a ' + hoverElement.classList.value );
+  if (hoverElement.classList.contains('rail') || hoverElement.classList.contains('stop') || hoverElement.classList.contains('player')) {
+    this.move(e.clientX, e.clientY);
   }
-  focusPointer.style.display = 'block';
+  this.show();
 }
-
-function paintPointer(x, y) {
-  const pointer = document.createElement('div');
-  pointer.classList.add('pointer');
-  pointer.style.transform = 'translate3d(' + (x - 10) + 'px, ' + (y - 10) + 'px, 0px)';
-  document.body.appendChild(pointer);
-  focusPointer = pointer;
-}
-
-function movePointer(pointer, x, y) {
-  pointer.style.transform = 'translate3d(' + (x - 10) + 'px, ' + (y - 10) + 'px, 0px)';
-}
-
-// Example of how we can do hover over (touch over).
-// window.addEventListener('mousemove', (e) => {
-//
-// });
-//
-// window.addEventListener('touchmove', (e) => {
-//   const hoverElement = document.elementFromPoint(e.clientX, e.clientY);
-// });
