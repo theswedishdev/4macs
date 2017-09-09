@@ -6,28 +6,26 @@ body {
 
 .main {
   width: 954px;
-  height: 768px; }
-
-svg .rail {
-  fill: #FFFFFF; }
-
-svg .border {
-  fill: #4CE07E; }
-
-svg .stop {
-  fill: #353535; }
-
-svg .red {
-  fill: #D84444; }
-
-svg .yellow {
-  fill: #F2DA2F; }
-
-svg .purple {
-  fill: #BA41D8; }
-
-svg .blue {
-  fill: #2F4ACC; }
+  height: 768px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .main svg {
+    height: 90%; }
+    .main svg .rail {
+      fill: #FFFFFF; }
+    .main svg .border {
+      fill: #4CE07E; }
+    .main svg .stop {
+      fill: #353535; }
+    .main svg .red {
+      fill: #D84444; }
+    .main svg .yellow {
+      fill: #F2DA2F; }
+    .main svg .purple {
+      fill: #BA41D8; }
+    .main svg .blue {
+      fill: #2F4ACC; }
 
 .pointer {
   width: 20px;
