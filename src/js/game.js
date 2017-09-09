@@ -7,12 +7,12 @@ const config = {
 };
 
 // Maybe use a longer Array of hex codes in the future
-const colors = [ 'red', 'yellow', 'purple', 'blue' ];
+const colorList = [ { name: 'red', hex: '#e74c3c' }, { name: 'yellow', hex: '#f1c40f' }, { name: 'purple', hex: '#9b59b6' }, { name: 'blue', hex: '#3498db'} ];
 
 // Set up an Array of the players by iterating through the configured playerCount
 let players = [];
 for (let i = 0; i < config.playerCount; i++) {
-  players.push( new Player(colors[i]) );
+  players.push( new Player(colorList[i]) );
 }
 
 // Set up all stops.

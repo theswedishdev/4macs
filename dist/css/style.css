@@ -21,13 +21,13 @@ body {
     .main svg .stop {
       fill: #353535; }
     .main svg .red {
-      fill: #D84444; }
+      fill: #e74c3c; }
     .main svg .yellow {
-      fill: #F2DA2F; }
+      fill: #f1c40f; }
     .main svg .purple {
-      fill: #BA41D8; }
+      fill: #9b59b6; }
     .main svg .blue {
-      fill: #2F4ACC; }
+      fill: #3498db; }
 
 .pointer {
   width: 20px;
