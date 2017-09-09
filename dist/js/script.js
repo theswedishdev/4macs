@@ -3,24 +3,34 @@
 var playerNodes = document.querySelectorAll('.player');
 for (var i = 0; i < playerNodes.length; i++) {
 
-  playerNodes[i].addEventListener('mousedown', function (e) {
-    console.log('Started tracking..');
+  playerNodes[i].addEventListener('mousedown', mouseDownHandler);
+  playerNodes[i].addEventListener('touchstart', mouseDownHandler);
+}
 
-    var pointer = new Pointer('lul', e.clientX, e.clientY);
-    window.addEventListener('mousemove', mouseMove);
+function mouseDownHandler(e) {
+  console.log('Started tracking..');
 
-    window.addEventListener('mouseup', function stopTracking(e) {
-      console.log('Stopped tracking!');
-      pointer.destroy();
-      window.removeEventListener('mousemove', mouseMove);
-      window.removeEventListener('mouseup', stopTracking);
-      removePointer(focusPointer);
-    });
+  var pointer = new Pointer('lul', e.clientX, e.clientY);
+  window.addEventListener('mousemove', mouseMove);
+  window.addEventListener('touchmove', mouseMove);
 
-    function mouseMove(e) {
-      movePlayer.call(pointer, e);
-    }
+  window.addEventListener('mouseup', function stopTracking(e) {
+    console.log('Stopped tracking!');
+    pointer.destroy();
+    window.removeEventListener('mousemove', mouseMove);
+    window.removeEventListener('mouseup', stopTracking);
   });
+
+  window.addEventListener('touchend', function stopTracking(e) {
+    console.log('Stopped tracking!');
+    pointer.destroy();
+    window.removeEventListener('touchmove', mouseMove);
+    window.removeEventListener('touchend', stopTracking);
+  });
+
+  function mouseMove(e) {
+    movePlayer.call(pointer, e);
+  }
 }
 
 function movePlayer(e) {
