@@ -8,6 +8,7 @@ for (var i = 0; i < playerNodes.length; i++) {
 }
 
 function mouseDownHandler(e) {
+  e.preventDefault();
   console.log('Started tracking..');
 
   var x = e.touches ? e.touches[0].clientX : e.clientX;
@@ -25,6 +26,7 @@ function mouseDownHandler(e) {
   // });
 
   window.addEventListener('touchend', function stopTracking(e) {
+    e.preventDefault();
     console.log('Stopped tracking!');
     pointer.destroy();
     window.removeEventListener('touchmove', mouseMove);
@@ -32,6 +34,7 @@ function mouseDownHandler(e) {
   });
 
   function mouseMove(e) {
+    e.preventDefault();
     movePlayer.call(pointer, e);
   }
 }
